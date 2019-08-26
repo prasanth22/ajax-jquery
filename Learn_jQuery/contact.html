@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Learn jQuery UI" />
+		<meta name="keywords" content="HTML,CSS,jQuery UI" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="styles/style.css" />
+		
+		<link rel="stylesheet" href="styles/jquery-ui.css" />
+		
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/jquery-ui.js"></script>
+					
+		 <script>
+			$(function() {
+			$( document ).tooltip();
+			});
+		</script>
+		<script>
+		$(function() {
+		$( "#datepicker" ).datepicker();
+		});
+		</script>
+		<script>
+		$(function() {
+		$( ".button" )
+		.button()		
+		.click(function( event ) {
+		event.preventDefault();
+		});
+		});
+		</script>
+		
+		<script>
+		$(function() {
+		$( ".button-heart" )
+		.button(
+			{
+			icons: {
+			primary: "ui-icon-heart"
+			},
+			text: true
+			}
+		)
+		.click(function( event ) {
+		event.preventDefault();
+		});
+		});
+		</script>
+	</head>
+	<body>
+		<div class="headerWrapper">
+			<div class="header">
+				<div class="logo">learn to use <span class="jQueryOrange">jQuery UI widgets</span></div>
+			</div>
+		</div>
+		<div class="menuWrapper">
+			<div class="menu">
+				<div class="menuItem">
+					<a href="index.html">Home</a>
+				</div>
+				<div class="menuItem">
+					<a href="about.html">About</a>
+				</div>
+				<div class="menuItem">
+					<a href="favorites.html">Favorites</a>
+				</div>
+				<div class="menuItem last selected">
+					<a href="contact.html">Contact</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="contentWrapper">
+			<div class="content">
+				<form>
+					<h1 title="If you must.">Contact Me:</h1>
+					
+					<div class="ui-state-highlight ui-corner-all">
+						<p><span class="ui-icon ui-icon-lightbulb myAlerts"></span>
+						<strong>Warning!</strong> Please specify what date you want me to get back to you by because I am very busy.</p>
+					</div>
+
+					
+					<div class="ui-state-error ui-corner-all">
+						<p><span class="ui-icon ui-icon-alert myAlerts"></span>
+						<strong>Alert:</strong> You've contacted me too many times this week, please stop.</p>
+					</div>
+
+					<div class="fieldWrap">
+						Your first name: <input type="text" id="txtFirstName" name="txtFirstName" title="Doesn't need to be your real first name." />
+					</div>
+					<div class="fieldWrap">
+						Your last name: <input type="text" id="txtLastName" name="txtLastName" />
+					</div>
+					<div class="fieldWrap">
+						What do you want? 
+						<div>
+							<textarea cols="20" rows="5" id="txtDate" name="txtDescription" title="What you really, really, want."></textarea>
+						</div>
+					</div>
+					<div class="fieldWrap">
+						What day should I get back to you by? <input type="text" id="datepicker" name="txtDescription" /> 
+					</div>
+					<div class="fieldWrap">
+						<input type="submit" id="btnSubmit" value="Submit!" class="button" />
+						<a href="#" class="button-heart">Click Here!</a>
+						<a href="#" class="button">This is cool</a>
+						<a href="#" class="button">Hello</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="footerWrapper">
+			<div class="footer">
+			&copy; 2013 Marie Taylor 
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<?php
+    include 'db.php';
+?>
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>chat system</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<div id="container">
+		<div id="chat_box">
+			<?php 
+			   $query = "select * from chat order by id DESC";
+			   $run = $con->query($query);
+			   while($row = $run->fetch_array())  :
+			 ?>
+			<div id="chat_data">
+				<span style="color: green"><?php echo $row['name'];?></span>
+				<span style="color: brown"><?php echo $row['msg'];?></span>
+				<span style="float: right;"><?php echo $row['time'];?></span>
+			</div>
+			
+		</div>
+		<form method="post" action="index.php">
+		<input type="text" name="name" placeholder="enter name">
+		<textarea name="enterr message" placeholder="enter message"></textarea>
+		<input type="submit" name="submit" value="submit it">
+	</form>
+	</div>
+	
+</body>
